@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { fetchArticles } from '@/utils/strapi';
+import { fetchArticles, fetchArticleBySlug } from '@/utils/strapi';
 
 // Generate static params for all articles
 export async function generateStaticParams() {
@@ -28,12 +28,14 @@ export default async function BlogPostPage({
   const { locale, slug } = await params;
 
   // Fetch article from Strapi by slug
-  const articles = await fetchArticles();
-  const article = articles.data.find((a: any) => a.attributes.slug === slug);
-
-  if (!article) {
+  const response = await fetchArticleBySlug(slug);
+  const allArticles = await fetchArticles(); // For related articles
+  
+  if (!response || !response.data) {
     notFound();
   }
+  
+  const article = response.data;
 
   const { title, content, publishedAt, category, description_short, featured_image } = article.attributes;
 
@@ -135,7 +137,7 @@ export default async function BlogPostPage({
         <div className="mt-16">
           <h3 className="text-2xl font-bold mb-6">Powiązane Artykuły</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {articles.data
+            {allArticles.data
               .filter((a: any) => a.id !== article.id)
               .slice(0, 2)
               .map((relatedArticle: any) => (

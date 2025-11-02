@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { fetchProducts } from '@/utils/strapi';
+import { fetchProducts, fetchProductBySlug } from '@/utils/strapi';
 import ScaleVisualization from '@/components/ScaleVisualization';
 import SmartHomeMatrixTable from '@/components/SmartHomeMatrixTable';
 import LegalComplianceInfo from '@/components/LegalComplianceInfo';
@@ -37,13 +37,13 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }: PageProps) {
   const { slug } = params;
   
-  const response = await fetchProducts();
-  const products = response.data || [];
-  const product = products.find((p: any) => p.attributes.slug === slug);
-
-  if (!product) {
+  const response = await fetchProductBySlug(slug);
+  
+  if (!response || !response.data) {
     notFound();
   }
+
+  const product = response.data;
 
   const {
     name,

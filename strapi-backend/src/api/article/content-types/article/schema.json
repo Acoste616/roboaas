@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": "Blog articles and expert reports"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description_short": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "featured_image": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["Case Studies", "ROI Analysis", "Use Cases", "Technology"],
+      "default": "Technology"
+    },
+    "publishedAt": {
+      "type": "datetime"
+    },
+    "is_expert_report": {
+      "type": "boolean",
+      "default": false
+    },
+    "report_pdf": {
+      "type": "string"
+    }
+  }
+}
