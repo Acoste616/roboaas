@@ -1,0 +1,94 @@
+{
+  "site_title": "EuroBot Hub",
+  "site_description": "Europejskie centrum robotów humanoidalnych",
+  "nav": {
+    "home": "Strona Główna",
+    "shop": "Sklep",
+    "blog": "Blog",
+    "about": "O Nas",
+    "contact": "Kontakt",
+    "club": "Premium Club"
+  },
+  "hero": {
+    "title": "Roboty w Domu. Zaufanie Przede Wszystkim.",
+    "subtitle": "Pobierz nasz Raport Ekspercki: Bezpieczeństwo i GDPR 2026",
+    "cta": "Pobierz Raport"
+  },
+  "how_we_work": {
+    "title": "Jak Działamy",
+    "step1_title": "Pobierz Wiedzę",
+    "step1_desc": "Zrozum ryzyka GDPR i AI Act",
+    "step2_title": "Porównaj",
+    "step2_desc": "Wizualizuj i analizuj dane",
+    "step3_title": "Połącz",
+    "step3_desc": "Bezpiecznie z producentem"
+  },
+  "report_form": {
+    "title": "Zrozum Zanim Kupisz",
+    "subtitle": "Otrzymaj bezpłatny raport ekspercki o bezpieczeństwie robotów i GDPR 2026",
+    "first_name": "Imię (opcjonalne)",
+    "email": "Adres e-mail",
+    "email_placeholder": "twoj.email@example.com",
+    "submit": "Pobierz PDF Teraz",
+    "success": "Dziękujemy! Sprawdź swoją skrzynkę e-mail.",
+    "error": "Wystąpił błąd. Spróbuj ponownie."
+  },
+  "blog": {
+    "title": "Blog EuroBot Hub",
+    "subtitle": "Ekspertyzy, case studies i najnowsze trendy w robotyce humanoidalnej",
+    "read_more": "Czytaj więcej",
+    "share": "Udostępnij",
+    "related": "Powiązane Artykuły",
+    "no_articles": "Nie znaleziono artykułów",
+    "want_more": "Chcesz Dowiedzieć Się Więcej?",
+    "download_report_cta": "Pobierz nasz bezpłatny raport ekspercki o bezpieczeństwie robotów i GDPR 2026"
+  },
+  "about": {
+    "title": "O EuroBot Hub",
+    "subtitle": "Europejskie centrum afiliacyjne robotów humanoidalnych, łączące innowację z zaufaniem i bezpieczeństwem",
+    "mission_title": "Nasza Misja",
+    "history_title": "Nasza Historia",
+    "team_title": "Nasz Zespół",
+    "values_title": "Nasze Wartości"
+  },
+  "contact": {
+    "title": "Skontaktuj Się z Nami",
+    "subtitle": "Jesteśmy tu, aby odpowiedzieć na Twoje pytania o roboty humanoidalne",
+    "info_title": "Informacje Kontaktowe",
+    "email_label": "Email",
+    "location_label": "Lokalizacja",
+    "hours_label": "Godziny Pracy",
+    "form_title": "Wyślij Wiadomość",
+    "name_label": "Imię i Nazwisko",
+    "email_input": "Email",
+    "message_label": "Wiadomość",
+    "submit": "Wyślij Wiadomość",
+    "submitting": "Wysyłanie...",
+    "success": "Dziękujemy za kontakt!",
+    "success_message": "Odpowiemy w ciągu 24 godzin.",
+    "error": "Wystąpił błąd. Spróbuj ponownie."
+  },
+  "club": {
+    "title": "Dołącz do Ekskluzywnego Klubu EuroBot Hub",
+    "subtitle": "Uzyskaj dostęp do prywatnej społeczności ekspertów, ekskluzywnych raportów i sesji Q&A na żywo",
+    "price": "5 EUR / miesiąc",
+    "benefits_title": "Co Otrzymujesz:",
+    "benefit1": "Q&A na żywo z ekspertami cyberbezpieczeństwa",
+    "benefit2": "Ekskluzywne raporty i analizy rynkowe",
+    "benefit3": "Dostęp do prywatnych kanałów na Discord",
+    "benefit4": "Wczesny dostęp do recenzji produktów",
+    "benefit5": "Priorytetowe wsparcie społeczności",
+    "cta": "Subskrybuj Teraz",
+    "processing": "Przetwarzanie...",
+    "secure_payment": "Bezpieczna płatność przez Stripe",
+    "cancel_anytime": "Anuluj w dowolnym momencie"
+  },
+  "footer": {
+    "transparency_title": "Transparentność Afiliacyjna",
+    "transparency_text": "EuroBot Hub działa jako partner afiliacyjny producentów robotów humanoidalnych. Możemy otrzymać prowizję od zakupów dokonanych za pośrednictwem linków na naszej stronie. To nie wpływa na cenę, którą płacisz, i pozwala nam dostarczać bezpłatne treści edukacyjne.",
+    "links": "Przydatne Linki",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "follow": "Śledź Nas"
+  }
+}

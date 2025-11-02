@@ -1,0 +1,294 @@
+{
+  "global": {
+    "siteName": "EuroBot Hub",
+    "logoAlt": "Logo EuroBot Hub"
+  },
+  "header": {
+    "nav": {
+      "home": "Strona Główna",
+      "shop": "Katalog (Sklep)",
+      "blog": "Baza Wiedzy (Blog)",
+      "about": "O Nas",
+      "contact": "Kontakt",
+      "club": "Premium Club"
+    },
+    "searchPlaceholder": "Szukaj robotów, marek, artykułów...",
+    "languageSwitcher": "Zmień język"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Dołącz do 500+ liderów i early-adopterów.",
+      "placeholder": "Twój adres e-mail",
+      "cta": "Subskrybuj",
+      "success": "Dziękujemy za subskrypcję!"
+    },
+    "links": {
+      "company": "Firma",
+      "resources": "Zasoby",
+      "legal": "Prawne"
+    },
+    "transparencyNotice": "EuroBot Hub działa jako partner wiodących producentów. Gdy korzystasz z naszych linków do zakupu lub wysłania zapytania, możemy otrzymać prowizję bez dodatkowych kosztów dla Ciebie. Pozwala nam to oferować bezstronne rekomendacje, prowadzić badania i utrzymywać platformę. Nie jesteśmy sprzedawcą ani producentem.",
+    "copyright": "© 2026 EuroBot Hub. Wszelkie prawa zastrzeżone."
+  },
+  "forms": {
+    "labels": {
+      "email": "Adres e-mail",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "companyName": "Nazwa firmy",
+      "message": "Twoja wiadomość",
+      "phone": "Numer telefonu (opcjonalnie)",
+      "country": "Kraj"
+    },
+    "placeholders": {
+      "email": "jan.kowalski@email.com",
+      "firstName": "Jan",
+      "message": "Chciałbym dowiedzieć się więcej o...",
+      "companyName": "Twoja Firma Sp. z o.o."
+    },
+    "validation": {
+      "required": "To pole jest wymagane.",
+      "emailInvalid": "Wprowadź poprawny adres e-mail.",
+      "phoneInvalid": "Wprowadź poprawny numer telefonu."
+    },
+    "buttons": {
+      "submit": "Wyślij wiadomość",
+      "submitting": "Wysyłanie...",
+      "nextStep": "Dalej",
+      "prevStep": "Wstecz"
+    },
+    "gdprConsent": "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na moje zapytanie, zgodnie z naszą Polityką Prywatności.",
+    "successMessage": "Dziękujemy! Otrzymaliśmy Twoją wiadomość. Skontaktujemy się z Tobą w ciągu 24 godzin.",
+    "errorMessage": "Wystąpił błąd. Spróbuj ponownie później."
+  },
+  "home": {
+    "hero": {
+      "h1": "Roboty Humanoidalne. Certyfikowane w UE. Gotowe na Twój dom.",
+      "p": "Nie sprzedajemy robotów. Edukujemy, porównujemy zgodność prawną (GDPR/AI Act) i łączymy Cię bezpośrednio z zaufanymi producentami.",
+      "ctaPrimary": "Rozpocznij Ocenę Gotowości",
+      "ctaSecondary": "Pobierz Raport Bezpieczeństwa 2026"
+    },
+    "trustSignal": {
+      "title": "Jesteśmy Twoim centrum edukacyjnym, nie sklepem.",
+      "step1": {
+        "title": "1. Odkryj",
+        "description": "Zrozum realne zastosowania. Użyj naszej Oceny Gotowości, aby znaleźć model dopasowany do Twoich celów (np. opieka nad seniorem)."
+      },
+      "step2": {
+        "title": "2. Porównaj",
+        "description": "Analizujemy dane. Zobacz interaktywne porównania skali (robot vs. człowiek) i sprawdź zgodność z Twoim smart home."
+      },
+      "step3": {
+        "title": "3. Połącz",
+        "description": "Gdy będziesz gotowy, prześlemy Twoje zapytanie (lead) bezpośrednio do producenta, aby zapewnić Ci najlepszą ofertę i lokalne wsparcie."
+      }
+    },
+    "testimonials": {
+      "title": "Zaufali nam liderzy innowacji",
+      "t1": {
+        "quote": "Wreszcie jedno miejsce, które tłumaczy roboty humanoidalne po ludzku. Ich analiza zgodności z AI Act jest kluczowa.",
+        "author": "Dr M. Kowalski",
+        "role": "Inwestor Tech, Monachium"
+      },
+      "t2": {
+        "quote": "EuroBot Hub pomógł nam zweryfikować, czy Neura MiPA faktycznie pasuje do naszego domu, zanim skontaktowaliśmy się z producentem. Niezbędne narzędzie.",
+        "author": "Anna Schmidt",
+        "role": "Użytkownik Beta, Warszawa"
+      }
+    },
+    "featuredProducts": {
+      "title": "Sprawdzone modele. Gotowe do wdrożenia.",
+      "cta": "Zobacz pełen katalog"
+    },
+    "featuredBlog": {
+      "title": "Zgłębiamy tematy, które mają znaczenie",
+      "cta": "Idź do Bazy Wiedzy"
+    }
+  },
+  "assessment": {
+    "title": "Ocena Gotowości Robota 2026",
+    "description": "Odpowiedz na 4 kluczowe pytania. Nasi eksperci przeanalizują Twoje odpowiedzi i zarekomendują modele, które najlepiej odpowiadają Twoim realnym potrzebom i obawom.",
+    "step1": {
+      "title": "Krok 1: Jaki jest Twój główny cel?",
+      "description": "Wybierz podstawowe zastosowanie, które rozważasz.",
+      "options": {
+        "elderCare": "Opieka nad Seniorem / Towarzystwo",
+        "homeHelp": "Pomoc domowa (Sprzątanie, Gotowanie)",
+        "automation": "Integracja i automatyzacja Smart Home",
+        "research": "Badania i Rozwój (B+R)",
+        "other": "Inne / Czysta ciekawość"
+      }
+    },
+    "step2": {
+      "title": "Krok 2: Jaka jest Twoja największa obawa?",
+      "description": "Co jest dla Ciebie kluczową barierą lub najważniejszym pytaniem?",
+      "options": {
+        "privacy": "Prywatność Danych (GDPR / Kto ma dostęp do kamer?)",
+        "safety": "Bezpieczeństwo Fizyczne (Dzieci, zwierzęta, upadki)",
+        "service": "Koszt i dostępność serwisu (Co jeśli się zepsuje?)",
+        "complexity": "Złożoność obsługi (Czy poradzę sobie z konfiguracją?)"
+      }
+    },
+    "step3": {
+      "title": "Krok 3: Budżet i horyzont czasowy",
+      "description": "Pomóż nam zrozumieć, na jakim etapie jesteś.",
+      "options": {
+        "budget": "Przewidywany budżet",
+        "b_10_25k": "10 000 - 25 000 EUR",
+        "b_25_50k": "25 000 - 50 000 EUR",
+        "b_50k_plus": "Powyżej 50 000 EUR",
+        "timeline": "Horyzont czasowy",
+        "t_3m": "W ciągu 3 miesięcy",
+        "t_6m": "3-6 miesięcy",
+        "t_research": "Tylko badam rynek"
+      }
+    },
+    "step4": {
+      "title": "Krok 4: Gdzie mamy wysłać Twoją spersonalizowaną analizę?",
+      "description": "Otrzymasz podsumowanie i rekomendacje 2-3 modeli."
+    },
+    "submitCta": "Prześlij do analizy"
+  },
+  "shop": {
+    "title": "Katalog Robotów Humanoidalnych",
+    "description": "Przeglądaj certyfikowane roboty dostępne w Unii Europejskiej. Filtruj według zastosowania, ceny i zgodności prawnej.",
+    "filters": {
+      "title": "Filtry",
+      "price": "Przedział cenowy (EUR)",
+      "brand": "Producent",
+      "useCase": "Główne zastosowanie",
+      "compliance": "Zgodność (AI Act / GDPR)"
+    },
+    "sorting": {
+      "title": "Sortuj według",
+      "priceAsc": "Cena: Rosnąco",
+      "priceDesc": "Cena: Malejąco",
+      "popular": "Popularność"
+    },
+    "productCard": {
+      "cta": "Zobacz szczegóły i analizę",
+      "priceLabel": "Szac. cena od:"
+    },
+    "emptyState": {
+      "title": "Nie znaleziono robotów",
+      "description": "Żaden robot nie pasuje do Twoich kryteriów. Spróbuj zresetować filtry, aby zobaczyć pełną ofertę."
+    }
+  },
+  "product": {
+    "cta": {
+      "lead": "Wyślij zapytanie do producenta",
+      "assessment": "Sprawdź kompatybilność (Ocena)",
+      "calculate": "Kalkulator Rat (Klarna)"
+    },
+    "scaleVis": {
+      "title": "Interaktywna Skala: Robot vs. Człowiek",
+      "label": "Twój wzrost: {height} cm",
+      "description": "Przesuń suwak, aby porównać skalę robota do swojego wzrostu. Zwizualizuj, jak będzie wyglądał w Twojej przestrzeni."
+    },
+    "accordion": {
+      "description": "Pełen opis",
+      "specs": "Specyfikacja Techniczna",
+      "smartHome": "Integracje Smart Home",
+      "legal": "Gwarancja i Zgodność Prawna (UE)"
+    },
+    "leadForm": {
+      "title": "Zapytaj o ten model",
+      "description": "Twoje zapytanie zostanie wstępnie zweryfikowane przez nasz zespół i przekazane bezpośrednio do autoryzowanego przedstawiciela producenta."
+    },
+    "smartHomeMatrix": {
+      "title": "Macierz Integracji Smart Home",
+      "system": "System",
+      "compatibility": "Kompatybilność",
+      "status": {
+        "full": "Pełna integracja",
+        "partial": "Częściowa (przez IFTTT/API)",
+        "none": "Brak"
+      }
+    },
+    "legalCompliance": {
+      "title": "Status Zgodności Prawnej (UE)",
+      "aiAct": "Status EU AI Act",
+      "gdpr": "Zgodność z GDPR (Dane)",
+      "warranty": "Gwarancja Producenta (UE)",
+      "status": {
+        "certified": "W pełni certyfikowany",
+        "pending": "W trakcie certyfikacji",
+        "compliant": "Zgodny (z audytem)",
+        "years_2": "Min. 2 lata (prawo UE)"
+      }
+    }
+  },
+  "blog": {
+    "title": "Baza Wiedzy",
+    "description": "Dogłębne analizy, raporty i odpowiedzi na najtrudniejsze pytania dotyczące robotyki domowej.",
+    "featuredTitle": "Wyróżniony Artykuł",
+    "articleTitles": {
+      "privacy": "Robot humanoidalny a prywatność danych – jak Neura MiPA chroni Twój dom?",
+      "cost": "Ile prądu zużywa Unitree G1? Realny koszt posiadania robota w 2026 roku.",
+      "useCase": "Czy robot humanoidalny naprawdę pomoże w opiece nad seniorem? Analiza przypadku."
+    },
+    "readMore": "Czytaj więcej"
+  },
+  "about": {
+    "hero": {
+      "h1": "Budujemy most między człowiekiem a technologią.",
+      "p": "Naszą misją nie jest sprzedaż maszyn, ale dostarczanie zaufania. Wierzymy, że przyszłość robotyki domowej w Europie musi opierać się na bezpieczeństwie, transparentności i edukacji."
+    },
+    "timeline": {
+      "title": "Nasza misja: Od Fazy 0 do Lidera Zaufania",
+      "item1": "Faza 0 (Walidacja): Potwierdzenie zapotrzebowania na edukację i weryfikację prawną (AI Act/GDPR).",
+      "item2": "Faza 1 (Launch MVP): Uruchomienie platformy edukacyjnej i Oceny Gotowości.",
+      "item3": "Faza 2 (Skalowanie): Budowa społeczności Premium Club i integracja pierwszych partnerów serwisowych."
+    },
+    "team": {
+      "title": "Eksperci, którym możesz zaufać",
+      "member1": {
+        "name": "[Imię Nazwisko]",
+        "role": "CEO i Ekspert ds. Zgodności AI",
+        "bio": "Placeholder: Doświadczenie w audytach GDPR i wdrażaniu systemów AI w sektorze finansowym."
+      },
+      "member2": {
+        "name": "[Imię Nazwisko]",
+        "role": "CTO i Architekt Smart Home",
+        "bio": "Placeholder: 10 lat doświadczenia w integracji systemów IoT i automatyki domowej."
+      }
+    },
+    "partnerForm": {
+      "title": "Zostań naszym partnerem",
+      "description": "Jesteś producentem, dystrybutorem lub integratorem? Wypełnij formularz, aby omówić, jak możemy zredukować Twój CAC i dostarczać Ci kwalifikowane leady."
+    }
+  },
+  "club": {
+    "hero": {
+      "h1": "Dołącz do EuroBot Premium Club.",
+      "p": "Dostęp do ekskluzywnych analiz, Q&A na żywo ze światowymi ekspertami i społeczności early-adopterów w Europie.",
+      "cta": "Dołącz teraz za 5 EUR / mies."
+    },
+    "benefits": {
+      "title": "Co otrzymujesz jako członek Premium?",
+      "item1": "Comiesięczne Q&A na żywo z ekspertami ds. robotyki i prawa AI.",
+      "item2": "Ekskluzywne, pogłębione analizy porównawcze (PDF), niedostępne publicznie.",
+      "item3": "Dostęp do prywatnych kanałów Discord (np. #unboxingi, #analizy-techniczne).",
+      "item4": "Wczesny dostęp do raportów rynkowych i analiz trendów."
+    },
+    "postPurchase": {
+      "title": "Witamy w Klubie!",
+      "description": "Twoja płatność została przetworzona. Otrzymasz teraz e-mail z zaproszeniem do serwera Discord i instrukcjami, jak uzyskać rolę 'Premium'."
+    }
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "description": "Masz pytania ogólne, uwagi lub propozycje współpracy? Użyj formularza poniżej lub napisz bezpośrednio na [email protected]",
+    "mapTitle": "Nasze biuro (Warszawa)"
+  },
+  "legal": {
+    "privacyPolicy": {
+      "title": "Polityka Prywatności",
+      "content": "Placeholder: [Tutaj musi znaleźć się szczegółowy opis przetwarzania danych: Kto jest administratorem (Supabase/my), jakie dane zbieramy (formularze, GA, Hotjar), jak je chronimy, prawa użytkownika (usunięcie), informacje o plikach cookies i zgodność z GDPR/RODO...]"
+    },
+    "termsOfService": {
+      "title": "Regulamin Świadczenia Usług",
+      "content": "Placeholder: [Opis regulaminu platformy, zasady korzystania z klubu, definicje, ograniczenia odpowiedzialności...]"
+    }
+  }
+}

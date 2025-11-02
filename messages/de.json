@@ -1,0 +1,59 @@
+{
+  "site_title": "EuroBot Hub",
+  "site_description": "Europäisches Zentrum für humanoide Roboter",
+  "nav": {
+    "home": "Startseite",
+    "shop": "Shop",
+    "blog": "Blog",
+    "about": "Über Uns",
+    "contact": "Kontakt",
+    "club": "Premium Club"
+  },
+  "hero": {
+    "title": "Roboter zu Hause. Vertrauen zuerst.",
+    "subtitle": "Laden Sie unseren Expertenbericht herunter: Sicherheit und DSGVO 2026",
+    "cta": "Bericht Herunterladen"
+  },
+  "how_we_work": {
+    "title": "Wie Wir Arbeiten",
+    "step1_title": "Wissen Erwerben",
+    "step1_desc": "DSGVO- und AI Act-Risiken verstehen",
+    "step2_title": "Vergleichen",
+    "step2_desc": "Daten visualisieren und analysieren",
+    "step3_title": "Verbinden",
+    "step3_desc": "Sicher mit Herstellern"
+  },
+  "report_form": {
+    "title": "Verstehen Sie, Bevor Sie Kaufen",
+    "subtitle": "Erhalten Sie einen kostenlosen Expertenbericht über Robotersicherheit und DSGVO 2026",
+    "first_name": "Vorname (optional)",
+    "email": "E-Mail-Adresse",
+    "email_placeholder": "ihre.email@example.com",
+    "submit": "PDF Jetzt Herunterladen",
+    "success": "Vielen Dank! Überprüfen Sie Ihren E-Mail-Posteingang.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "club": {
+    "title": "Treten Sie dem Exklusiven EuroBot Hub Club bei",
+    "subtitle": "Erhalten Sie Zugang zu einer privaten Community von Experten, exklusiven Berichten und Live-Q&A-Sessions",
+    "price": "5 EUR / Monat",
+    "benefits_title": "Was Sie erhalten:",
+    "benefit1": "Live-Q&A mit Cybersicherheitsexperten",
+    "benefit2": "Exklusive Berichte und Marktanalysen",
+    "benefit3": "Zugang zu privaten Discord-Kanälen",
+    "benefit4": "Früher Zugang zu Produktbewertungen",
+    "benefit5": "Prioritärer Community-Support",
+    "cta": "Jetzt Abonnieren",
+    "processing": "Wird verarbeitet...",
+    "secure_payment": "Sichere Zahlung über Stripe",
+    "cancel_anytime": "Jederzeit kündbar"
+  },
+  "footer": {
+    "transparency_title": "Affiliate-Transparenz",
+    "transparency_text": "EuroBot Hub fungiert als Affiliate-Partner von Herstellern humanoider Roboter. Wir können eine Provision von Käufen erhalten, die über Links auf unserer Website getätigt werden. Dies hat keinen Einfluss auf den Preis, den Sie zahlen, und ermöglicht es uns, kostenlose Bildungsinhalte bereitzustellen.",
+    "links": "Nützliche Links",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "follow": "Folgen Sie Uns"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "site_title": "EuroBot Hub",
+  "site_description": "European humanoid robot hub",
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "club": "Premium Club"
+  },
+  "hero": {
+    "title": "Robots at Home. Trust First.",
+    "subtitle": "Download our Expert Report: Security and GDPR 2026",
+    "cta": "Download Report"
+  },
+  "how_we_work": {
+    "title": "How We Work",
+    "step1_title": "Get Knowledge",
+    "step1_desc": "Understand GDPR and AI Act risks",
+    "step2_title": "Compare",
+    "step2_desc": "Visualize and analyze data",
+    "step3_title": "Connect",
+    "step3_desc": "Securely with manufacturers"
+  },
+  "report_form": {
+    "title": "Understand Before You Buy",
+    "subtitle": "Get a free expert report on robot security and GDPR 2026",
+    "first_name": "First Name (optional)",
+    "email": "Email Address",
+    "email_placeholder": "your.email@example.com",
+    "submit": "Download PDF Now",
+    "success": "Thank you! Check your email inbox.",
+    "error": "An error occurred. Please try again."
+  },
+  "club": {
+    "title": "Join the Exclusive EuroBot Hub Club",
+    "subtitle": "Get access to a private community of experts, exclusive reports, and live Q&A sessions",
+    "price": "5 EUR / month",
+    "benefits_title": "What You Get:",
+    "benefit1": "Live Q&A with cybersecurity experts",
+    "benefit2": "Exclusive reports and market analysis",
+    "benefit3": "Access to private Discord channels",
+    "benefit4": "Early access to product reviews",
+    "benefit5": "Priority community support",
+    "cta": "Subscribe Now",
+    "processing": "Processing...",
+    "secure_payment": "Secure payment via Stripe",
+    "cancel_anytime": "Cancel anytime"
+  },
+  "footer": {
+    "transparency_title": "Affiliate Transparency",
+    "transparency_text": "EuroBot Hub operates as an affiliate partner of humanoid robot manufacturers. We may receive a commission from purchases made through links on our site. This does not affect the price you pay and allows us to provide free educational content.",
+    "links": "Useful Links",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "follow": "Follow Us"
+  }
+}
