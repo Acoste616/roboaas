@@ -2,6 +2,11 @@
 // Uses NEXT_PUBLIC_STRAPI_API_URL environment variable
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
+const isProd = process.env.NODE_ENV === 'production';
+
+if (isProd && !process.env.NEXT_PUBLIC_STRAPI_API_URL) {
+  throw new Error('NEXT_PUBLIC_STRAPI_API_URL is not set in production. Set it in Vercel to your Render Strapi URL.');
+}
 
 // Generic fetch function for Strapi API v5
 export async function fetchFromStrapi(endpoint: string) {
