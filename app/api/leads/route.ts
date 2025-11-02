@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const validatedData = leadSchema.parse(body);
 
     // 1. Save to Supabase
-    const { data: leadData, error: dbError } = await supabase
+    const { error: dbError } = await supabase
       .from('leads')
       .insert(validatedData);
 

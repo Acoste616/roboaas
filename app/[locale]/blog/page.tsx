@@ -25,9 +25,6 @@ export default async function BlogPage({
   const data = await fetchArticles();
   const articles: Article[] = data?.data || [];
 
-  // Get unique categories
-  const categories = ['all', ...Array.from(new Set(articles.map(a => a.attributes.category)))];
-
   return (
     <div className="container mx-auto px-4 py-20">
       {/* Header */}

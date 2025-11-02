@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import JakDzialamyGrafika from '@/components/JakDzialamyGrafika';
 import ReportDownloadForm from '@/components/ReportDownloadForm';
 
@@ -37,9 +38,9 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl text-neutral-light mb-8 max-w-3xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </p>
-          <a href="#report-form" className="btn-primary inline-block text-lg px-8 py-4">
+          <Link href="#report-form" className="btn-primary inline-block text-lg px-8 py-4">
             {t('hero.cta')}
-          </a>
+          </Link>
         </div>
 
         {/* Scroll Indicator */}
@@ -105,7 +106,7 @@ export default function HomePage() {
               { name: '1X Neo', price: '€20,000', image: '/images/NEO-Gamma_Breakfast.webp', brand: '1X', slug: '1x-neo' },
               { name: 'Figure 02', price: '€85,000', image: '/images/Figure-03-humanoid-robots-Figure-AI-07.webp', brand: 'Figure AI', slug: 'figure-02' },
             ].map((robot, index) => (
-              <a key={index} href={`/pl/sklep/${robot.slug}`} className="card group cursor-pointer hover:scale-105 transition-transform duration-300">
+              <Link key={index} href={`/pl/sklep/${robot.slug}`} className="card group cursor-pointer hover:scale-105 transition-transform duration-300">
                 <div className="relative h-64 bg-primary rounded-lg mb-4 overflow-hidden">
                   <Image
                     src={robot.image}
@@ -125,13 +126,13 @@ export default function HomePage() {
                 </h3>
                 <p className="text-2xl font-bold text-accent mb-4">{robot.price}</p>
                 <span className="btn-secondary w-full block text-center">Zobacz Szczegóły</span>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-12">
-            <a href="/pl/sklep" className="btn-primary inline-block text-lg px-8 py-4">
+            <Link href="/pl/sklep" className="btn-primary inline-block text-lg px-8 py-4">
               Zobacz Wszystkie Roboty →
-            </a>
+            </Link>
           </div>
         </div>
       </section>

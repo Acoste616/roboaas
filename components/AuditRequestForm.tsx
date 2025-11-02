@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const auditRequestSchema = z.object({
   first_name: z.string().optional(),
@@ -288,9 +289,9 @@ export default function AuditRequestForm({ productName }: AuditRequestFormProps)
             {/* GDPR Notice */}
             <p className="text-xs text-neutral-gray mt-4">
               Wysyłając formularz, zgadzasz się na przetwarzanie danych osobowych zgodnie z{' '}
-              <a href="/polityka-prywatnosci" className="text-accent hover:underline">
+              <Link href="/polityka-prywatnosci" className="text-accent hover:underline">
                 Polityką Prywatności
-              </a>
+              </Link>
               . Twoje dane są chronione zgodnie z GDPR.
             </p>
           </motion.form>

@@ -37,7 +37,7 @@ export default async function BlogPostPage({
   
   const article = response.data;
 
-  const { title, content, publishedAt, category, description_short, featured_image } = article.attributes;
+  const { title, content, publishedAt, category } = article.attributes;
 
   return (
     <div className="container mx-auto px-4 py-20">

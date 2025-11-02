@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+import Link from 'next/link';
 import { fetchProducts, fetchProductBySlug } from '@/utils/strapi';
 import ScaleVisualization from '@/components/ScaleVisualization';
 import SmartHomeMatrixTable from '@/components/SmartHomeMatrixTable';
@@ -8,10 +8,10 @@ import AuditRequestForm from '@/components/AuditRequestForm';
 import ProductGallery from '@/components/ProductGallery';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string;
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all products
@@ -35,7 +35,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const { slug } = params;
+  const { locale, slug } = await params;
   
   const response = await fetchProductBySlug(slug);
   
@@ -62,13 +62,13 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="container mx-auto px-4">
         {/* Breadcrumbs */}
         <nav className="text-sm text-neutral-gray mb-8">
-          <a href={`/${params.locale}`} className="hover:text-accent transition-colors">
+          <Link href={`/${locale}`} className="hover:text-accent transition-colors">
             Home
-          </a>
+          </Link>
           <span className="mx-2">/</span>
-          <a href={`/${params.locale}/sklep`} className="hover:text-accent transition-colors">
+          <Link href={`/${locale}/sklep`} className="hover:text-accent transition-colors">
             Sklep
-          </a>
+          </Link>
           <span className="mx-2">/</span>
           <span className="text-neutral-light">{name}</span>
         </nav>
@@ -151,9 +151,9 @@ export default async function ProductPage({ params }: PageProps) {
               <p className="text-lg text-neutral-light mb-4">
                 🎯 <strong>Zainteresowany tym modelem?</strong> Wypełnij formularz audytu poniżej - nasz ekspert skontaktuje się w ciągu 24h.
               </p>
-              <a href="#audit-form" className="btn-primary w-full text-center block">
+              <Link href="#audit-form" className="btn-primary w-full text-center block">
                 Zapytaj o Audyt
-              </a>
+              </Link>
             </div>
           </div>
         </div>
