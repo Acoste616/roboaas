@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { fetchArticles } from '@/utils/strapi';
 import ArticleCard from '@/components/ArticleCard';
 
@@ -20,6 +21,9 @@ export default async function BlogPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  
+  // Enable static rendering with next-intl
+  setRequestLocale(locale);
   
   // Server-side fetch
   const data = await fetchArticles();

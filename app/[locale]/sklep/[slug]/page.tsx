@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { fetchProducts, fetchProductBySlug } from '@/utils/strapi';

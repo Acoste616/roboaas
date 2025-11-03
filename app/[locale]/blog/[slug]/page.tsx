@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { setRequestLocale } from 'next-intl/server';
 import { fetchArticles, fetchArticleBySlug } from '@/utils/strapi';
 
 // Generate static params for all articles
@@ -26,6 +27,9 @@ export default async function BlogPostPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+
+  // Enable static rendering with next-intl
+  setRequestLocale(locale);
 
   // Fetch article from Strapi by slug
   const response = await fetchArticleBySlug(slug);
