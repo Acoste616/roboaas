@@ -108,8 +108,16 @@ coverage
 .env
 license.txt
 exports
-.strapi
+*.cache
 dist
 build
 .strapi-updater.json
-.strapi-cloud.json
+.strapi
+.cache
+
+############################
+# Development
+############################
+
+.vscode
+.editorconfig

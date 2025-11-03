@@ -1,13 +1,64 @@
-# EuroBot Hub - Strapi v5 Backend
+# EuroBot Hub - Strapi v4 Backend
 
-This is the Strapi v5 CMS backend for the EuroBot Hub project.
+This is the Strapi v4.26 CMS backend for the EuroBot Hub project.
+
+## ⚠️ CRITICAL FIX - API Structure
+
+**Issue Fixed**: Missing API routes, controllers, and services files caused deployment failures.
+
+**What was wrong**:
+- Collection Types (Product, Article) had only `schema.json` files
+- Missing `routes/*.js`, `controllers/*.js`, and `services/*.js`
+- Plugin i18n failed with: `Cannot read properties of undefined (reading 'routes')`
+
+**What was fixed**:
+- Created complete API structure for both Collection Types
+- Added default routes, controllers, and services using Strapi factories
+- Fixed health check path in render.yaml
+
+## ✅ Current API Structure
+
+```
+src/api/
+├── article/
+│   ├── content-types/article/
+│   │   └── schema.json
+│   ├── controllers/
+│   │   └── article.js ✅
+│   ├── routes/
+│   │   └── article.js ✅
+│   └── services/
+│       └── article.js ✅
+└── product/
+    ├── content-types/product/
+    │   └── schema.json
+    ├── controllers/
+    │   └── product.js ✅
+    ├── routes/
+    │   └── product.js ✅
+    └── services/
+        └── product.js ✅
+```
+
+## 🚀 Quick Deployment
+
+### Vercel Deployment (NOT Recommended for Strapi)
+
+**⚠️ WARNING**: Vercel is NOT recommended for Strapi because:
+- Ephemeral filesystem (uploaded media files are lost)
+- No persistent storage for `public/uploads/`
+- Use Render.com instead for persistent disk storage
+
+### Render Deployment (RECOMMENDED)
+
+The `render.yaml` file is pre-configured for automatic deployment with persistent disk storage.
 
 ## Prerequisites
 
-- Node.js 18+ or 20+
-- npm or yarn
-- Supabase account (for PostgreSQL database)
-- Render.com account (for deployment)
+- Node.js 18.x - 20.x (as specified in package.json engines)
+- npm 6.0.0 or higher
+- PostgreSQL database (Supabase recommended)
+- Render.com account (for deployment with persistent storage)
 
 ## Local Development Setup
 
@@ -208,6 +259,21 @@ NEXT_PUBLIC_STRAPI_API_URL=https://your-service-name.onrender.com
 ## Support
 
 For issues, check:
-- Strapi v5 Documentation: https://docs.strapi.io/dev-docs/intro
+- Strapi v4 Documentation: https://docs-v4.strapi.io/
 - Render Documentation: https://docs.render.com/
 - Supabase Documentation: https://supabase.com/docs
+
+## Recent Fixes
+
+### 2025-11-03: Fixed Deployment Failure
+- **Problem**: `Cannot read properties of undefined (reading 'routes')`
+- **Cause**: Missing API routes, controllers, and services files
+- **Solution**: Created complete API structure for Product and Article Collection Types
+- **Files Added**:
+  - `src/api/product/routes/product.js`
+  - `src/api/product/controllers/product.js`
+  - `src/api/product/services/product.js`
+  - `src/api/article/routes/article.js`
+  - `src/api/article/controllers/article.js`
+  - `src/api/article/services/article.js`
+- **Config Update**: Changed health check path in render.yaml from `/` to `/_health`
