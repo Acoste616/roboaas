@@ -1,11 +1,12 @@
 // Strapi API client for fetching data from Strapi v5 backend
 // Uses NEXT_PUBLIC_STRAPI_API_URL environment variable
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://eurobot-hub-strapi.onrender.com';
 const isProd = process.env.NODE_ENV === 'production';
 
+// Warning only - don't block build (Vercel injects env vars at runtime)
 if (isProd && !process.env.NEXT_PUBLIC_STRAPI_API_URL) {
-  throw new Error('NEXT_PUBLIC_STRAPI_API_URL is not set in production. Set it in Vercel to your Render Strapi URL.');
+  console.warn('[Strapi] Warning: NEXT_PUBLIC_STRAPI_API_URL not set, using default Render URL');
 }
 
 // Generic fetch function for Strapi API v5

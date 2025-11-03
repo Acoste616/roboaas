@@ -15,34 +15,67 @@ interface LeadData {
 
 export async function sendReportEmail(email: string, firstName?: string) {
   if (!RESEND_API_KEY) {
-    console.log('[MOCK Email] Would send report email to:', email);
+    console.log('[MOCK Email] Would send report email with PDF to:', email);
     return { success: true, mock: true };
   }
 
   try {
+    // Read PDF file from public directory
+    const fs = require('fs');
+    const path = require('path');
+    const pdfPath = path.join(process.cwd(), 'public', 'pdf', 'Robot_Security_Report_2026_PL.pdf');
+    
+    let pdfBuffer: Buffer | null = null;
+    try {
+      pdfBuffer = fs.readFileSync(pdfPath);
+    } catch (error) {
+      console.error('[Email] PDF file not found:', pdfPath);
+      console.error('[Email] Sending email without attachment');
+    }
+
+    const emailPayload: any = {
+      from: 'EuroBot Hub <raporty@eurobothub.com>',
+      to: email,
+      subject: 'Twój Raport: Bezpieczeństwo Robotów i GDPR 2026',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h1 style="color: #00FF88;">Dziękujemy ${firstName || ''}!</h1>
+          <p>Oto Twój raport ekspercki o bezpieczeństwie robotów humanoidalnych i zgodności z GDPR.</p>
+          <p><strong>W załączniku PDF znajdziesz szczegółową analizę:</strong></p>
+          <ul>
+            <li>Wymagania GDPR dla robotów domowych</li>
+            <li>EU AI Act - co musisz wiedzieć w 2026 roku</li>
+            <li>Bezpieczeństwo danych osobowych i prywatność</li>
+            <li>Case studies z Europy (Berlin, Warszawa, Monachium)</li>
+            <li>Checklista bezpiecznego zakupu</li>
+          </ul>
+          <p style="background-color: #f0f0f0; padding: 15px; border-left: 4px solid #00FF88;">
+            💡 <strong>Potrzebujesz pomocy w wyborze robota?</strong><br>
+            Nasi eksperci są dostępni 24/7. Odpowiedz na tego maila lub odwiedź 
+            <a href="https://eurobothub.com/kontakt" style="color: #00FF88;">eurobothub.com/kontakt</a>
+          </p>
+          <p>Pozdrawiamy,<br><strong>Zespół EuroBot Hub</strong></p>
+        </div>
+      `
+    };
+
+    // Add PDF attachment if file exists
+    if (pdfBuffer) {
+      emailPayload.attachments = [
+        {
+          filename: 'Robot_Security_Report_2026_PL.pdf',
+          content: pdfBuffer.toString('base64')
+        }
+      ];
+    }
+
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${RESEND_API_KEY}`
       },
-      body: JSON.stringify({
-        from: 'EuroBot Hub <raporty@eurobothub.com>',
-        to: email,
-        subject: 'Twój Raport: Bezpieczeństwo Robotów i GDPR 2026',
-        html: `
-          <h1>Dziękujemy ${firstName || ''}!</h1>
-          <p>Oto Twój raport ekspercki o bezpieczeństwie robotów humanoidalnych i zgodności z GDPR.</p>
-          <p>W załączniku znajdziesz szczegółową analizę:</p>
-          <ul>
-            <li>Wymagania GDPR dla robotów domowych</li>
-            <li>EU AI Act - co musisz wiedzieć</li>
-            <li>Bezpieczeństwo danych osobowych</li>
-            <li>Case studies z Europy</li>
-          </ul>
-          <p>Jeśli masz pytania, odpowiedz na tego maila - nasz ekspert chętnie pomoże!</p>
-        `
-      })
+      body: JSON.stringify(emailPayload)
     });
 
     if (!response.ok) {

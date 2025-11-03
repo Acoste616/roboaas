@@ -9,7 +9,14 @@
     "build": "strapi build",
     "strapi": "strapi",
     "validate": "node scripts/validate-api.js",
-    "prebuild": "node scripts/validate-api.js"
+    "prebuild": "node scripts/validate-api.js",
+    "seed:products": "node scripts/seed-products.js",
+    "seed:articles": "node scripts/seed-articles.js",
+    "seed:all": "node scripts/seed-all.js",
+    "seed:production": "node scripts/seed-production.js",
+    "seed:clear": "node scripts/clear-products.js",
+    "seed:fresh": "npm run seed:clear && npm run seed:production",
+    "seed": "npm run seed:production"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.25.23",

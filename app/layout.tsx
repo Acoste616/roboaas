@@ -11,5 +11,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  // Root layout must return children only (html/body in [locale]/layout.tsx)
+  return <>{children}</>;
 }

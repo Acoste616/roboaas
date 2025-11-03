@@ -1,5 +1,6 @@
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { setRequestLocale } from 'next-intl/server';
 import { fetchProducts, fetchProductBySlug } from '@/utils/strapi';
 import ScaleVisualization from '@/components/ScaleVisualization';
 import SmartHomeMatrixTable from '@/components/SmartHomeMatrixTable';
@@ -36,6 +37,9 @@ export async function generateStaticParams() {
 
 export default async function ProductPage({ params }: PageProps) {
   const { locale, slug } = await params;
+  
+  // Enable static rendering with next-intl
+  setRequestLocale(locale);
   
   const response = await fetchProductBySlug(slug);
   

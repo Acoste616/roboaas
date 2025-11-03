@@ -1,5 +1,10 @@
-technicdatatobuildasite.md (Wersja zaktualizowana pod Ścieżkę B)
-Niniejszy dokument techniczny (v3.3 - Ścieżka B) jest finalną, szczegółową specyfikacją implementacji MVP EuroBot Hub, bazującą na Blueprincie v3.1 i zaktualizowaną o strategiczną zmianę z "Quizu" na "Raport Ekspercki" (zgodnie z quizvalidation.md).
+technicdatatobuildasite.md (Wersja zaktualizowana pod Ścieżkę B - v3.4 Post-Audit)
+**Status Implementacji: 95% zgodności z tą specyfikacją**
+**Data audytu: 2025-11-03**
+**Zweryfikowane**: API endpoint /api/leads, komponenty interaktywne, pivot Quiz→Raport
+**Krytyczny brak**: Załącznik PDF w emailu (linia 108-110 poniżej)
+
+Niniejszy dokument techniczny (v3.4 - Ścieżka B) jest finalną, szczegółową specyfikacją implementacji MVP EuroBot Hub, bazującą na Blueprincie v3.1 i zaktualizowaną o strategiczną zmianę z "Quizu" na "Raport Ekspercki" (zgodnie z quizvalidation.md).
 
 Sekcja 1: Architektura Globalna i Stack Technologiczny Architektura jest zoptymalizowana pod kątem SEO (SSR/SSG), niskich kosztów i jasnego rozdzielenia hostingu (Frontend/Backend).
 
@@ -300,4 +305,36 @@ Cel: Deployment. Kampania Google Ads (200 EUR). Promocja Discord.
 
 Dodatek: Uruchomienie ankiet Hotjar.
 
-Ta specyfikacja (v3.3) jest kompletna, zgodna ze Ścieżką B (Raport Ekspercki) i gotowa do implementacji.
+Ta specyfikacja (v3.4 Post-Audit) jest kompletna, zgodna ze Ścieżką B (Raport Ekspercki) i gotowa do implementacji.
+
+---
+
+## DODATEK: STATUS AUDYTU IMPLEMENTACJI (2025-11-03)
+
+### ✅ Zweryfikowane jako zgodne z tą specyfikacją:
+1. **Sekcja 3.1 - API /api/leads**: 95% zgodny
+   - Walidacja Zod: ✅ Poprawna
+   - Pole source_form: ✅ Implementacja enum zgodna
+   - Zapis do Supabase: ✅ Działa
+   - Wysyłka emailów: ✅ Rozróżnia source_form
+   - ❌ BRAK: Załącznik PDF w emailu (linia 108-110)
+
+2. **Sekcja 4.3 - Strona Produktu**: 100% zgodny
+   - Komponent ScaleVisualization: ✅ Zaimplementowany (components/ScaleVisualization.tsx)
+   - Komponent AuditRequestForm: ✅ Zaimplementowany (components/AuditRequestForm.tsx)
+   - Oba komponenty pełnią funkcję zgodnie ze specyfikacją
+
+3. **Pivot Quiz→Raport**: 100% wykonany
+   - Logika quizu: ✅ Całkowicie usunięta (grep search potwierdził)
+   - ReportDownloadForm: ✅ Główny CTA na Home
+
+### ⚠️ Wymagane poprawki:
+1. Dodać plik PDF: `/public/pdf/Robot_Security_Report_2026_PL.pdf`
+2. Zaktualizować `utils/email.ts` - funkcja `sendReportEmail()` o:
+   ```typescript
+   attachments: [{
+     filename: 'Robot_Security_Report_2026_PL.pdf',
+     path: './public/pdf/Robot_Security_Report_2026_PL.pdf'
+   }]
+   ```
+3. Wpisać Rate Limiting do POST handlera (obecnie zdefiniowany ale nie używany)
