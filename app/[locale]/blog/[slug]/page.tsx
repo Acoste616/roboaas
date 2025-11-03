@@ -26,9 +26,10 @@ export default async function BlogPostPage({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, slug } = await params;
+  const resolvedParams = await params;
+  const { locale, slug } = resolvedParams;
 
-  // Enable static rendering with next-intl
+  // Enable static rendering with next-intl - must be called before any async operations
   setRequestLocale(locale);
 
   // Fetch article from Strapi by slug

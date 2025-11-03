@@ -20,9 +20,10 @@ export default async function BlogPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const resolvedParams = await params;
+  const { locale } = resolvedParams;
   
-  // Enable static rendering with next-intl
+  // Enable static rendering with next-intl - must be called before any async operations
   setRequestLocale(locale);
   
   // Server-side fetch

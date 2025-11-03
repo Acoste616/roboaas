@@ -36,9 +36,10 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const { locale, slug } = await params;
+  const resolvedParams = await params;
+  const { locale, slug } = resolvedParams;
   
-  // Enable static rendering with next-intl
+  // Enable static rendering with next-intl - must be called before any async operations
   setRequestLocale(locale);
   
   const response = await fetchProductBySlug(slug);
