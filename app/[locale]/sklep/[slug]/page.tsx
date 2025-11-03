@@ -36,11 +36,14 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const resolvedParams = await params;
-  const { locale, slug } = resolvedParams;
+  // CRITICAL: Extract locale synchronously for setRequestLocale before any await
+  const { locale } = await params;
   
-  // Enable static rendering with next-intl - must be called before any async operations
+  // Enable static rendering with next-intl - must be called immediately
   setRequestLocale(locale);
+  
+  // Now we can safely destructure the rest
+  const { slug } = await params;
   
   const response = await fetchProductBySlug(slug);
   

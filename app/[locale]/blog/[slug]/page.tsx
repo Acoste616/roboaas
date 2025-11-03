@@ -26,11 +26,14 @@ export default async function BlogPostPage({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const resolvedParams = await params;
-  const { locale, slug } = resolvedParams;
-
-  // Enable static rendering with next-intl - must be called before any async operations
+  // CRITICAL: Extract locale synchronously for setRequestLocale before any await
+  const { locale } = await params;
+  
+  // Enable static rendering with next-intl - must be called immediately
   setRequestLocale(locale);
+  
+  // Now we can safely destructure the rest
+  const { slug } = await params;
 
   // Fetch article from Strapi by slug
   const response = await fetchArticleBySlug(slug);
