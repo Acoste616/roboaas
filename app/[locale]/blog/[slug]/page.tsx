@@ -49,6 +49,11 @@ export default async function BlogPostPage({
   const { title, content, category, description_short, featured_image } = article.attributes;
   const publishedDate = article.attributes.publishedAt || article.attributes.createdAt || new Date().toISOString();
 
+  // Debug: Log content to see what we're getting
+  console.log('[Blog Detail] Article:', title);
+  console.log('[Blog Detail] Content length:', content?.length || 0);
+  console.log('[Blog Detail] Content preview:', content?.substring(0, 200) || 'NO CONTENT');
+
   const t = await getTranslations('blog');
   const tNav = await getTranslations('nav');
 
@@ -109,24 +114,35 @@ export default async function BlogPostPage({
           </div>
 
           {/* Article Content with Prose Styling */}
-          <div 
-            className="prose prose-invert prose-lg max-w-none
-              prose-headings:text-neutral-light prose-headings:font-bold
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-neutral-gray prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-accent prose-strong:font-semibold
-              prose-ul:text-neutral-gray prose-ul:my-6
-              prose-ol:text-neutral-gray prose-ol:my-6
-              prose-li:my-2
-              prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-neutral-light
-              prose-table:text-neutral-gray prose-table:my-8
-              prose-th:bg-accent/10 prose-th:text-accent prose-th:font-semibold prose-th:p-3
-              prose-td:border prose-td:border-neutral-gray/20 prose-td:p-3
-              prose-img:rounded-lg"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
+          {content ? (
+            <div 
+              className="prose prose-invert prose-lg max-w-none
+                prose-headings:text-neutral-light prose-headings:font-bold
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:text-neutral-gray prose-p:leading-relaxed prose-p:mb-6
+                prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-accent prose-strong:font-semibold
+                prose-ul:text-neutral-gray prose-ul:my-6
+                prose-ol:text-neutral-gray prose-ol:my-6
+                prose-li:my-2
+                prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-neutral-light
+                prose-table:text-neutral-gray prose-table:my-8
+                prose-th:bg-accent/10 prose-th:text-accent prose-th:font-semibold prose-th:p-3
+                prose-td:border prose-td:border-neutral-gray/20 prose-td:p-3
+                prose-img:rounded-lg"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          ) : (
+            <div className="prose prose-invert prose-lg max-w-none">
+              <p className="text-neutral-gray">{description_short}</p>
+              <div className="mt-8 p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+                <p className="text-yellow-400 text-sm">
+                  ⚠️ Full article content is being loaded. Please check back soon.
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* CTA Section */}
           <div className="mt-16 card bg-primary-dark">
