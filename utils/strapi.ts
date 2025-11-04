@@ -36,8 +36,14 @@ export async function fetchFromStrapi(endpoint: string) {
 }
 
 // Fetch all products with populated fields
-export async function fetchProducts() {
-  const data = await fetchFromStrapi('products?populate=*');
+export async function fetchProducts(locale?: string) {
+  let endpoint = 'products?populate=*';
+  if (locale) {
+    // Map locale codes: 'pl' -> 'pl', 'en' -> 'en', 'de' -> 'de'
+    endpoint += `&locale=${locale}`;
+  }
+  
+  const data = await fetchFromStrapi(endpoint);
   
   if (!data) {
     console.warn('[Strapi] Failed to fetch products, using empty array');
@@ -48,8 +54,13 @@ export async function fetchProducts() {
 }
 
 // Fetch single product by slug with populated fields
-export async function fetchProductBySlug(slug: string) {
-  const data = await fetchFromStrapi(`products?filters[slug][$eq]=${slug}&populate=*`);
+export async function fetchProductBySlug(slug: string, locale?: string) {
+  let endpoint = `products?filters[slug][$eq]=${slug}&populate=*`;
+  if (locale) {
+    endpoint += `&locale=${locale}`;
+  }
+  
+  const data = await fetchFromStrapi(endpoint);
   
   if (!data || !data.data || data.data.length === 0) {
     console.warn('[Strapi] Product not found:', slug);
@@ -61,8 +72,13 @@ export async function fetchProductBySlug(slug: string) {
 }
 
 // Fetch all articles with populated fields
-export async function fetchArticles() {
-  const data = await fetchFromStrapi('articles?populate=*&sort=publishedAt:desc');
+export async function fetchArticles(locale?: string) {
+  let endpoint = 'articles?populate=*&sort=publishedAt:desc';
+  if (locale) {
+    endpoint += `&locale=${locale}`;
+  }
+  
+  const data = await fetchFromStrapi(endpoint);
   
   if (!data) {
     console.warn('[Strapi] Failed to fetch articles, using empty array');
@@ -73,8 +89,13 @@ export async function fetchArticles() {
 }
 
 // Fetch single article by slug with populated fields
-export async function fetchArticleBySlug(slug: string) {
-  const data = await fetchFromStrapi(`articles?filters[slug][$eq]=${slug}&populate=*`);
+export async function fetchArticleBySlug(slug: string, locale?: string) {
+  let endpoint = `articles?filters[slug][$eq]=${slug}&populate=*`;
+  if (locale) {
+    endpoint += `&locale=${locale}`;
+  }
+  
+  const data = await fetchFromStrapi(endpoint);
   
   if (!data || !data.data || data.data.length === 0) {
     console.warn('[Strapi] Article not found:', slug);

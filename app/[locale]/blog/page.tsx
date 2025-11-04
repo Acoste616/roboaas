@@ -27,7 +27,7 @@ export default async function BlogPage({
   setRequestLocale(locale);
   
   // Server-side fetch
-  const data = await fetchArticles();
+  const data = await fetchArticles(locale);
   const articles: Article[] = data?.data || [];
 
   const t = await getTranslations('blog');

@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: PageProps) {
   // Now we can safely destructure the rest
   const { slug } = await params;
   
-  const response = await fetchProductBySlug(slug);
+  const response = await fetchProductBySlug(slug, locale);
   
   if (!response || !response.data) {
     notFound();

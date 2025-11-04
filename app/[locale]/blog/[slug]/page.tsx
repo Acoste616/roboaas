@@ -37,8 +37,8 @@ export default async function BlogPostPage({
   const { slug } = await params;
 
   // Fetch article from Strapi by slug
-  const response = await fetchArticleBySlug(slug);
-  const allArticles = await fetchArticles(); // For related articles
+  const response = await fetchArticleBySlug(slug, locale);
+  const allArticles = await fetchArticles(locale); // For related articles
   
   if (!response || !response.data) {
     notFound();
