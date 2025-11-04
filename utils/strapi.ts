@@ -37,11 +37,12 @@ export async function fetchFromStrapi(endpoint: string) {
 
 // Fetch all products with populated fields
 export async function fetchProducts(locale?: string) {
+  // Temporarily disable locale filtering until Strapi backend is rebuilt with i18n plugin
   let endpoint = 'products?populate=*';
-  if (locale) {
-    // Map locale codes: 'pl' -> 'pl', 'en' -> 'en', 'de' -> 'de'
-    endpoint += `&locale=${locale}`;
-  }
+  // TODO: Re-enable locale filtering after Strapi rebuild:
+  // if (locale) {
+  //   endpoint += `&locale=${locale}`;
+  // }
   
   const data = await fetchFromStrapi(endpoint);
   
@@ -55,10 +56,12 @@ export async function fetchProducts(locale?: string) {
 
 // Fetch single product by slug with populated fields
 export async function fetchProductBySlug(slug: string, locale?: string) {
+  // Temporarily disable locale filtering until Strapi backend is rebuilt with i18n plugin
   let endpoint = `products?filters[slug][$eq]=${slug}&populate=*`;
-  if (locale) {
-    endpoint += `&locale=${locale}`;
-  }
+  // TODO: Re-enable locale filtering after Strapi rebuild:
+  // if (locale) {
+  //   endpoint += `&locale=${locale}`;
+  // }
   
   const data = await fetchFromStrapi(endpoint);
   
@@ -73,10 +76,12 @@ export async function fetchProductBySlug(slug: string, locale?: string) {
 
 // Fetch all articles with populated fields
 export async function fetchArticles(locale?: string) {
+  // Temporarily disable locale filtering until Strapi backend is rebuilt with i18n plugin
   let endpoint = 'articles?populate=*&sort=publishedAt:desc';
-  if (locale) {
-    endpoint += `&locale=${locale}`;
-  }
+  // TODO: Re-enable locale filtering after Strapi rebuild:
+  // if (locale) {
+  //   endpoint += `&locale=${locale}`;
+  // }
   
   const data = await fetchFromStrapi(endpoint);
   
@@ -85,15 +90,32 @@ export async function fetchArticles(locale?: string) {
     return { data: [] };
   }
   
+  // Client-side filtering by locale based on article ID pattern
+  // Articles 1,3,5 are Polish, 2,4,6 are English
+  if (data.data && locale) {
+    const filtered = data.data.filter((article: any) => {
+      const isPolish = article.id % 2 === 1; // Odd IDs are Polish
+      const isEnglish = article.id % 2 === 0; // Even IDs are English
+      
+      if (locale === 'pl') return isPolish;
+      if (locale === 'en') return isEnglish;
+      if (locale === 'de') return isEnglish; // Use English for German until we have DE translations
+      return true;
+    });
+    return { ...data, data: filtered };
+  }
+  
   return data;
 }
 
 // Fetch single article by slug with populated fields
 export async function fetchArticleBySlug(slug: string, locale?: string) {
+  // Temporarily disable locale filtering until Strapi backend is rebuilt with i18n plugin
   let endpoint = `articles?filters[slug][$eq]=${slug}&populate=*`;
-  if (locale) {
-    endpoint += `&locale=${locale}`;
-  }
+  // TODO: Re-enable locale filtering after Strapi rebuild:
+  // if (locale) {
+  //   endpoint += `&locale=${locale}`;
+  // }
   
   const data = await fetchFromStrapi(endpoint);
   
