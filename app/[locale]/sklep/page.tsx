@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import ProductCard from '@/components/ProductCard';
 import Sidebar, { FilterState } from '@/components/Sidebar';
 import { fetchProducts } from '@/utils/strapi';
@@ -20,6 +21,9 @@ interface Product {
 }
 
 export default function ShopPage() {
+  const t = useTranslations('shop');
+  const tNav = useTranslations('nav');
+  
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -125,7 +129,7 @@ export default function ShopPage() {
             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full mx-auto mb-4"
           />
-          <p className="text-neutral-gray">Ładowanie produktów...</p>
+          <p className="text-neutral-gray">Loading products...</p>
         </div>
       </div>
     );
@@ -141,10 +145,10 @@ export default function ShopPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-bold mb-4 glow-text"
           >
-            Katalog Robotów
+            {tNav('shop')}
           </motion.h1>
           <p className="text-xl text-neutral-gray">
-            Odkryj najbardziej zaawansowane roboty humanoidalne dostępne w Europie
+            {t('subtitle')}
           </p>
         </div>
 

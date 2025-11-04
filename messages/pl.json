@@ -41,7 +41,26 @@
     "related": "Powiązane Artykuły",
     "no_articles": "Nie znaleziono artykułów",
     "want_more": "Chcesz Dowiedzieć Się Więcej?",
-    "download_report_cta": "Pobierz nasz bezpłatny raport ekspercki o bezpieczeństwie robotów i GDPR 2026"
+    "download_report_cta": "Pobierz nasz bezpłatny raport ekspercki o bezpieczeństwie robotów i GDPR 2026",
+    "min_read": "min czytania"
+  },
+  "shop": {
+    "title": "Sklep",
+    "subtitle": "Odkryj najbardziej zaawansowane roboty humanoidalne dostępne w Europie",
+    "breadcrumb_home": "Strona Główna",
+    "breadcrumb_shop": "Sklep",
+    "price_info": "+ transport i instalacja",
+    "ce_mark": "✓ CE Mark",
+    "gdpr_compliant": "✓ Zgodny z RODO",
+    "warranty": "✓ 2 lata gwarancji",
+    "key_specs": "Kluczowe Specyfikacje",
+    "degrees_freedom": "Stopnie swobody",
+    "battery": "Bateria",
+    "payload": "Udźwig",
+    "speed": "Prędkość",
+    "interested_title": "Zainteresowany tym modelem?",
+    "interested_desc": "Wypełnij formularz audytu poniżej - nasz ekspert skontaktuje się w ciągu 24h.",
+    "request_audit": "Zapytaj o Audyt"
   },
   "about": {
     "title": "O EuroBot Hub",

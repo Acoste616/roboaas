@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { fetchArticles } from '@/utils/strapi';
 import ArticleCard from '@/components/ArticleCard';
 
@@ -30,13 +30,15 @@ export default async function BlogPage({
   const data = await fetchArticles();
   const articles: Article[] = data?.data || [];
 
+  const t = await getTranslations('blog');
+
   return (
     <div className="container mx-auto px-4 py-20">
       {/* Header */}
       <div className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog EuroBot Hub</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('title')}</h1>
         <p className="text-neutral-gray text-lg max-w-2xl mx-auto">
-          Ekspertyzy, case studies i najnowsze trendy w robotyce humanoidalnej
+          {t('subtitle')}
         </p>
       </div>
 
@@ -59,7 +61,7 @@ export default async function BlogPage({
       {articles.length === 0 && (
         <div className="text-center py-20">
           <p className="text-neutral-gray text-lg">
-            Nie znaleziono artykułów
+            {t('no_articles')}
           </p>
         </div>
       )}

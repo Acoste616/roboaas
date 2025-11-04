@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { fetchArticles, fetchArticleBySlug } from '@/utils/strapi';
 
 // Generate static params for all articles
@@ -49,14 +49,17 @@ export default async function BlogPostPage({
   const { title, content, category, description_short, featured_image } = article.attributes;
   const publishedDate = article.attributes.publishedAt || article.attributes.createdAt || new Date().toISOString();
 
+  const t = await getTranslations('blog');
+  const tNav = await getTranslations('nav');
+
   return (
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-neutral-gray">
-          <Link href={`/${locale}`} className="hover:text-accent">Home</Link>
+          <Link href={`/${locale}`} className="hover:text-accent">{tNav('home')}</Link>
           {' > '}
-          <Link href={`/${locale}/blog`} className="hover:text-accent">Blog</Link>
+          <Link href={`/${locale}/blog`} className="hover:text-accent">{tNav('blog')}</Link>
           {' > '}
           <span className="text-neutral-light">{title}</span>
         </nav>
@@ -101,7 +104,7 @@ export default async function BlogPostPage({
               <svg className="w-5 h-5 text-neutral-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-neutral-gray text-sm">5 min czytania</span>
+              <span className="text-neutral-gray text-sm">5 {t('min_read')}</span>
             </div>
           </div>
 
@@ -129,20 +132,20 @@ export default async function BlogPostPage({
           <div className="mt-16 card bg-primary-dark">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">
-                Chcesz Dowiedzieć Się Więcej?
+                {t('want_more')}
               </h3>
               <p className="text-neutral-gray mb-6">
-                Pobierz nasz bezpłatny raport ekspercki o bezpieczeństwie robotów i GDPR 2026
+                {t('download_report_cta')}
               </p>
               <Link href={`/${locale}#report-form`} className="btn-primary inline-block">
-                Pobierz Raport
+                {t('want_more')}
               </Link>
             </div>
           </div>
 
           {/* Share Buttons */}
           <div className="mt-12 flex items-center justify-center space-x-4">
-            <span className="text-neutral-gray">Udostępnij:</span>
+            <span className="text-neutral-gray">{t('share')}:</span>
             <button className="w-10 h-10 rounded-full bg-primary-dark hover:bg-accent hover:text-primary transition-all flex items-center justify-center">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -158,7 +161,7 @@ export default async function BlogPostPage({
 
         {/* Related Articles */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold mb-6">Powiązane Artykuły</h3>
+          <h3 className="text-2xl font-bold mb-6">{t('related')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {allArticles.data
               .filter((a: any) => a.id !== article.id)
@@ -176,7 +179,7 @@ export default async function BlogPostPage({
                     {relatedArticle.attributes.title}
                   </h4>
                   <span className="text-accent text-sm font-semibold">
-                    Czytaj więcej →
+                    {t('read_more')} →
                   </span>
                 </Link>
               ))}

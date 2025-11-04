@@ -33,6 +33,35 @@
     "success": "Vielen Dank! Überprüfen Sie Ihren E-Mail-Posteingang.",
     "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
   },
+  "blog": {
+    "title": "EuroBot Hub Blog",
+    "subtitle": "Experteneinblicke, Fallstudien und neueste Trends in der humanoiden Robotik",
+    "read_more": "Weiterlesen",
+    "share": "Teilen",
+    "related": "Verwandte Artikel",
+    "no_articles": "Keine Artikel gefunden",
+    "want_more": "Möchten Sie Mehr Erfahren?",
+    "download_report_cta": "Laden Sie unseren kostenlosen Expertenbericht über Robotersicherheit und DSGVO 2026 herunter",
+    "min_read": "Min. Lesezeit"
+  },
+  "shop": {
+    "title": "Shop",
+    "subtitle": "Entdecken Sie die fortschrittlichsten humanoiden Roboter in Europa",
+    "breadcrumb_home": "Startseite",
+    "breadcrumb_shop": "Shop",
+    "price_info": "+ Versand und Installation",
+    "ce_mark": "✓ CE-Kennzeichnung",
+    "gdpr_compliant": "✓ DSGVO-konform",
+    "warranty": "✓ 2 Jahre Garantie",
+    "key_specs": "Wichtige Spezifikationen",
+    "degrees_freedom": "Freiheitsgrade",
+    "battery": "Batterie",
+    "payload": "Nutzlast",
+    "speed": "Geschwindigkeit",
+    "interested_title": "Interessiert an diesem Modell?",
+    "interested_desc": "Füllen Sie das Audit-Formular unten aus - unser Experte wird sich innerhalb von 24 Stunden bei Ihnen melden.",
+    "request_audit": "Audit Anfragen"
+  },
   "club": {
     "title": "Treten Sie dem Exklusiven EuroBot Hub Club bei",
     "subtitle": "Erhalten Sie Zugang zu einer privaten Community von Experten, exklusiven Berichten und Live-Q&A-Sessions",

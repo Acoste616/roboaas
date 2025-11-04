@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { fetchProducts, fetchProductBySlug } from '@/utils/strapi';
 import ScaleVisualization from '@/components/ScaleVisualization';
 import SmartHomeMatrixTable from '@/components/SmartHomeMatrixTable';
@@ -65,17 +65,20 @@ export default async function ProductPage({ params }: PageProps) {
     legal_compliance
   } = product.attributes;
 
+  const t = await getTranslations('shop');
+  const tNav = await getTranslations('nav');
+
   return (
     <main className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         {/* Breadcrumbs */}
         <nav className="text-sm text-neutral-gray mb-8">
           <Link href={`/${locale}`} className="hover:text-accent transition-colors">
-            Home
+            {t('breadcrumb_home')}
           </Link>
           <span className="mx-2">/</span>
           <Link href={`/${locale}/sklep`} className="hover:text-accent transition-colors">
-            Sklep
+            {t('breadcrumb_shop')}
           </Link>
           <span className="mx-2">/</span>
           <span className="text-neutral-light">{name}</span>
@@ -104,49 +107,49 @@ export default async function ProductPage({ params }: PageProps) {
                 </p>
               </div>
               <p className="text-sm text-neutral-gray">
-                + transport i instalacja
+                {t('price_info')}
               </p>
             </div>
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-3 mb-8">
               <span className="px-4 py-2 bg-green-500/20 text-green-400 border border-green-500/30 rounded-lg text-sm font-semibold">
-                ✓ CE Mark
+                {t('ce_mark')}
               </span>
               <span className="px-4 py-2 bg-green-500/20 text-green-400 border border-green-500/30 rounded-lg text-sm font-semibold">
-                ✓ GDPR Compliant
+                {t('gdpr_compliant')}
               </span>
               <span className="px-4 py-2 bg-accent/20 text-accent border border-accent/30 rounded-lg text-sm font-semibold">
-                ✓ 2 lata gwarancji
+                {t('warranty')}
               </span>
             </div>
 
             {/* Quick Specs */}
             {specs_table && (
               <div className="card mb-8">
-                <h3 className="text-xl font-bold mb-4 text-neutral-light">Kluczowe Specyfikacje</h3>
+                <h3 className="text-xl font-bold mb-4 text-neutral-light">{t('key_specs')}</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {specs_table.dof && (
                     <div className="p-3 bg-primary-dark rounded">
-                      <p className="text-neutral-gray text-sm mb-1">Stopnie swobody</p>
+                      <p className="text-neutral-gray text-sm mb-1">{t('degrees_freedom')}</p>
                       <p className="text-accent font-bold text-lg">{specs_table.dof} DoF</p>
                     </div>
                   )}
                   {specs_table.battery_kwh && (
                     <div className="p-3 bg-primary-dark rounded">
-                      <p className="text-neutral-gray text-sm mb-1">Bateria</p>
+                      <p className="text-neutral-gray text-sm mb-1">{t('battery')}</p>
                       <p className="text-accent font-bold text-lg">{specs_table.battery_kwh} kWh</p>
                     </div>
                   )}
                   {specs_table.payload_kg && (
                     <div className="p-3 bg-primary-dark rounded">
-                      <p className="text-neutral-gray text-sm mb-1">Udźwig</p>
+                      <p className="text-neutral-gray text-sm mb-1">{t('payload')}</p>
                       <p className="text-accent font-bold text-lg">{specs_table.payload_kg} kg</p>
                     </div>
                   )}
                   {specs_table.speed_ms && (
                     <div className="p-3 bg-primary-dark rounded">
-                      <p className="text-neutral-gray text-sm mb-1">Prędkość</p>
+                      <p className="text-neutral-gray text-sm mb-1">{t('speed')}</p>
                       <p className="text-accent font-bold text-lg">{specs_table.speed_ms} m/s</p>
                     </div>
                   )}
@@ -157,10 +160,10 @@ export default async function ProductPage({ params }: PageProps) {
             {/* CTA Section */}
             <div className="p-6 bg-accent/5 border-2 border-accent/30 rounded-lg">
               <p className="text-lg text-neutral-light mb-4">
-                🎯 <strong>Zainteresowany tym modelem?</strong> Wypełnij formularz audytu poniżej - nasz ekspert skontaktuje się w ciągu 24h.
+                🎯 <strong>{t('interested_title')}</strong> {t('interested_desc')}
               </p>
               <Link href="#audit-form" className="btn-primary w-full text-center block">
-                Zapytaj o Audyt
+                {t('request_audit')}
               </Link>
             </div>
           </div>

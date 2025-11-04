@@ -33,6 +33,35 @@
     "success": "Thank you! Check your email inbox.",
     "error": "An error occurred. Please try again."
   },
+  "blog": {
+    "title": "EuroBot Hub Blog",
+    "subtitle": "Expert insights, case studies and latest trends in humanoid robotics",
+    "read_more": "Read more",
+    "share": "Share",
+    "related": "Related Articles",
+    "no_articles": "No articles found",
+    "want_more": "Want to Learn More?",
+    "download_report_cta": "Download our free expert report on robot security and GDPR 2026",
+    "min_read": "min read"
+  },
+  "shop": {
+    "title": "Shop",
+    "subtitle": "Discover the most advanced humanoid robots available in Europe",
+    "breadcrumb_home": "Home",
+    "breadcrumb_shop": "Shop",
+    "price_info": "+ shipping and installation",
+    "ce_mark": "✓ CE Mark",
+    "gdpr_compliant": "✓ GDPR Compliant",
+    "warranty": "✓ 2 year warranty",
+    "key_specs": "Key Specifications",
+    "degrees_freedom": "Degrees of Freedom",
+    "battery": "Battery",
+    "payload": "Payload",
+    "speed": "Speed",
+    "interested_title": "Interested in this model?",
+    "interested_desc": "Fill out the audit form below - our expert will contact you within 24h.",
+    "request_audit": "Request Audit"
+  },
   "club": {
     "title": "Join the Exclusive EuroBot Hub Club",
     "subtitle": "Get access to a private community of experts, exclusive reports, and live Q&A sessions",
