@@ -7,7 +7,7 @@ interface ArticleCardProps {
   description_short: string;
   featured_image: string;
   category: string;
-  publishedAt: string;
+  publishedAt?: string;
   locale: string;
 }
 
@@ -20,11 +20,17 @@ export default function ArticleCard({
   publishedAt,
   locale
 }: ArticleCardProps) {
-  const formattedDate = new Date(publishedAt).toLocaleDateString('pl-PL', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+  const formattedDate = publishedAt 
+    ? new Date(publishedAt).toLocaleDateString('pl-PL', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    : new Date().toLocaleDateString('pl-PL', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
 
   return (
     <Link href={`/${locale}/blog/${slug}`}>
